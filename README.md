@@ -1,6 +1,8 @@
 # Grafana'yı Nginx arkasında çalıştırmak
 
-# v2 (deneniyor)
+# v2
+"iframe.html" dosyası içerisin verilen JWT ve "grafana.ini" içerisindeki ayarlarla URL'den giriş yapılabildi. Iframe kullanarak Grafana'ya giriş yapılabiliyor ve mevcut sayfa yenilendiği takdirde takdirde giriş ekranına atmak yerine Grafana'ya giriş yapıldığında kullanıcıyı karşılayan ana sayfaya yönlendiriyor. Burada istediğimiz, kullanıcı hangi sayfada sayfayı yeniliyor ise, o sayfanın kalıcı olması, herhangi bir farklı sayfaya yönlendirme yapmaması. 
+
 ## JWT Token ile Kullanıcı Girişi Yapmak
 `grafana/grafana.ini` Dosyasındaki ayarlar ile kullanıcı girişini JWT üzerinden sağlamak istiyoruz.
 
