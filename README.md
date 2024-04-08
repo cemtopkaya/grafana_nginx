@@ -1,4 +1,24 @@
 # Grafana'yı Nginx arkasında çalıştırmak
+
+# v2 (deneniyor)
+## JWT Token ile Kullanıcı Girişi Yapmak
+`grafana/grafana.ini` Dosyasındaki ayarlar ile kullanıcı girişini JWT üzerinden sağlamak istiyoruz.
+
+### JWT Token Oluşturmak
+jwt.io sayfasında aşağıdaki şekilde bir token oluşturup girişi URL üzerinden deniyoruz:
+![alt text](.vscode/images/jwt-io-token.png)
+
+```
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbS50b3BrYXlhIiwiZW1haWwiOiJjZW0udG9wa2F5YUB1bGFrLmNvbS50ciIsImlhdCI6MTUxNjIzOTAyMn0.K5kppSQuVrgice7ACi1E_KzflG6P1Ihz7G1wIpwl7kwXdqtvWlLQHWZ6rcif2XlspzhKVkoZBJ_G5AA3GGka33wdstm9l4G9ffnk766IUYMJKxUmLiU27LEW_EVJ9ttg4IDXxiypoizRfUxaE1dZnsr8uvhHGCLFwVhYFqnqX-clrY0D6ej_tamrzrbdCujA7rGmh6C2M1v4isaNe7iYfd2s932InQ2hTh6pqsfFh7XCw8Ihqt4KVPGTEOHpQj5tWVKk5URpcCCV8jtOm8OXeQy1u4lAbBUA2gHxOqVfbtELBF1JKy7BVwbq7nxFV88zP9Jrr0zmc3QPu3uAWw-BRoTlPqwJrHey9tMHr5e_BqnQ_UrRIATgUs_Td_uJAq0JXZszDqPGpDg-pRrt1Wkt61FzS50pfrMXF-seeQLpiReNjy1dyjC3VxqMgVcaxbDAmXk42KYO2Le333Zt_tGexS7JmL_-TW-bxJFeJXe7vgEQGQYZ04_7GdBIzQGORdhgM8opsppSmO0TL_W9_9vMvifoxnsQpFblCaHydj4tTetWvzkL-L4_yYNK_qqnrOksTmd8539ZbpMrFx5RyORrwtgAMoZn5Q-XeSgoSSFEYw3LbDUXoPn6CXQ7bfVFvhxWfw-_9V01F0zsy6VcW-_WJ3nCU6ffe43v6cQtDES3Flw
+```
+
+Oluşan token ile URL adresinden giriş sağlamayı bekliyoruz:
+```
+http://localhost/?auth_token=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9......
+```
+
+# v1
+
 Bu haliyle proxy olarak çalışan Nginx'in arkasında Grafana çalıştı
 
 `nginx/default.conf`

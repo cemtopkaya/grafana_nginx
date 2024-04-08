@@ -19,7 +19,8 @@ services:
     restart: unless-stopped
     volumes:
       - grafana_data:/var/lib/grafana
-      # - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/grafana.key.pub:/var/lib/grafana/grafana.key.pub
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
     ports:
       - 3090:3000
 
